@@ -1,0 +1,28 @@
+{
+  "name": "mvc-techblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjsolis12/mvc-TechBlog.git"
+  },
+  "author": "Claudia Solis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjsolis12/mvc-TechBlog/issues"
+  },
+  "homepage": "https://github.com/cjsolis12/mvc-TechBlog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.6",
+    "dotenv": "^16.0.3",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.3.0",
+    "sequelize": "^6.31.1"
+  }
+}
