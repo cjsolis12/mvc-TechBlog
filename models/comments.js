@@ -22,6 +22,13 @@ Comments.init(
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW,
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        }
     });
 
     module.exports = Comments;
