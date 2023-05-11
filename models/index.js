@@ -16,7 +16,7 @@ BlogPost.belongsTo(User,{
 })
 
 BlogPost.hasMany(Comments, {
-    foreignKey: 'blogpost_id',
+    foreignKey: 'blogPost_id',
     onDelete: 'CASCADE',
 })
 
