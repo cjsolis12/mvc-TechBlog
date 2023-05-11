@@ -8,6 +8,7 @@ const dbBlogPostData = await BlogPost.findAll({
     include: [
         {
             model: User,
+            attributes:['user_name'],
         }
     ]
 
@@ -16,7 +17,7 @@ const dbBlogPostData = await BlogPost.findAll({
  blogposts.get({ plain: true })
  );
 
- res.render('homepage', {
+ res.render('blogposts', {
     blogPosts,
  });
 } catch(err){
