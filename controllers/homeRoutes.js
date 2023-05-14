@@ -13,12 +13,12 @@ const dbBlogPostData = await BlogPost.findAll({
     ]
 
 });
- const blogPosts = dbBlogPostData.map((blogposts) => 
- blogposts.get({ plain: true })
+ const blogPosts = dbBlogPostData.map((blogpost) => 
+ blogpost.get({ plain: true })
  );
 
  res.render('blogposts', {
-    blogPosts,
+    blogPosts
  });
 } catch(err){
     console.log(err);
