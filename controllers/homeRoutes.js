@@ -8,7 +8,7 @@ const dbBlogPostData = await BlogPost.findAll({
     include: [
         {
             model: User,
-            attributes:['user_name'],
+            attributes:['username'],
         }
     ]
 
@@ -17,28 +17,17 @@ const dbBlogPostData = await BlogPost.findAll({
  blogpost.get({ plain: true })
  );
 
- res.render('blogposts', {
+ console.log(blogPosts)
+ res.render('homepage', {
     blogPosts
  });
 } catch(err){
     console.log(err);
     res.status(500).json(err)
 }
-
-
-
-
-
-
-})
-
-
-
-
-router.get('/', async (req, res) => {
-    //Sending the rendered HandleBars.js template back as the response
-    res.render('homepage');
 });
+
+
 
 //Login Route
 router.get('/login', (req, res) => {
