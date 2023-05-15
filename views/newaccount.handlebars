@@ -2,18 +2,18 @@
   <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col col-xl-10">
       <div class="card" style="border-radius: 1rem;">
-        <div class="col-md-12 col-lg-7 d-flex align-items-center">
+        <div class="col-md-6 col-lg-7 d-flex align-items-center">
           <div class="card-body p-4 p-lg-5 text-black">
 
-            <form class="form login-form">
+            <form class="form signup-form">
 
               <div class="d-flex align-items-center mb-3 pb-1">
-                <span class="h1 fw-bold mb-0">Log In</span>
+                <span class="h1 fw-bold mb-0">Create a New Account</span>
               </div>
               <div class="form-outline mb-4">
                 <input
                   type="username"
-                  id="username_login"
+                  id="username_signup"
                   class="form-control form-control-lg"
                 />
                 <label class="form-label" for="form2Example17">Username</label>
@@ -22,7 +22,7 @@
               <div class="form-outline mb-4">
                 <input
                   type="password"
-                  id="password_login"
+                  id="password_signup"
                   class="form-control form-control-lg"
                 />
                 <label class="form-label" for="form2Example27">Password</label>
@@ -31,14 +31,9 @@
               <div class="pt-1 mb-4">
                 <button
                   class="btn btn-outline-primary btn-lg btn-block"
-                  type="submit"
-                >Login</button>
+                  type="button"
+                >Create New Account</button>
               </div>
-
-              {{! <a class="small text-muted" href="#!">Forgot password?</a> }}
-              <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an
-                account?
-                <a href="/newaccount" style="color: #393f81;">Sign Up here</a></p>
             </form>
           </div>
         </div>
@@ -47,4 +42,5 @@
     </div>
   </div>
 </div>
-<script src="../public/js/login.js"></script>
+
+<script src="../public/js/signup.js"></script>
