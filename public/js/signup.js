@@ -7,7 +7,7 @@ const signupFormHandler = async (event) => {
 
   console.log(username, password)
   if(username && password){
-    const response = await fetch('/api/users/', {
+    const response = await fetch('/api/user/', {
         method: 'POST',
         body: JSON.stringify({ username, password}),
         headers: { 'Content-Type': 'application/json'}
@@ -15,6 +15,7 @@ const signupFormHandler = async (event) => {
 
     if(response.ok){
         document.location.replace('/dashboard');
+        alert('Account Created!')
     } else {
         alert(response.statusText)
     }
@@ -23,4 +24,4 @@ const signupFormHandler = async (event) => {
 
 document
   .querySelector('#registerBtn')
-  .addEventListener('submit', signupFormHandler);
+  .addEventListener('click', signupFormHandler);
