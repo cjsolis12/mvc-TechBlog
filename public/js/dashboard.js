@@ -7,7 +7,7 @@ const createNewBlog = async (event) => {
     console.log(title, content)
 
     if(title && content){
-        const response = await fetch (`api/blogposts/`, {
+        const response = await fetch (`api/blogs`, {
             method: 'POST',
             body: JSON.stringify({title, content }),
             headers: {
