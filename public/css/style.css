@@ -25,7 +25,7 @@ body{
 }
 
 /* Blog Post Styling */
-#blog-card, #login-card{
+#blog-card, #login-card, #register-card{
     background-color: #eaeef2c4;
     box-shadow: 0 3px 5px rgb(231, 226, 88);
 }
