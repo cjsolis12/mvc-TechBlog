@@ -1,1 +1,37 @@
 
+
+body{
+    background: radial-gradient(circle, rgb(75, 162, 139) -20%, rgba(12,12,48,1) 75%);
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Navbar styling */
+
+.navbar-brand{
+    font-size: 24px;
+    font-weight: 400;
+
+}
+
+.navbar  .nav-link {
+    color: #dddede;
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+/* Blog Post Styling */
+#blog-card{
+    background-color: #eaeef2c4;
+    box-shadow: 0 3px 5px rgb(231, 226, 88);
+}
+
+#blog-title{
+    color: #aed20f;
+    
+}
+
