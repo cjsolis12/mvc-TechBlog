@@ -17,7 +17,6 @@ router.post('/', async (req, res) => {
 })
 
 
-
 //Route for user logging in
 router.post("/login", async (req, res) => {
   try {

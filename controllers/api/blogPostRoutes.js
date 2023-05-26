@@ -14,20 +14,15 @@ try{
         ]
         //Include Comments attributes too
     });
-    const blog = dbBlogPostData.get({ plain: true });
-    res.render('blog', { blog })
+    const blogPosts = dbBlogPostData.get({ plain: true });
+    res.render('blog', { ...blogPosts })
 } catch (err) {
     console.log(err);
     res.status(500).json(err);
 }
 })
 
-
-
-
-
-
-
+//Create a new blogpost
 router.post('/', withAuth, async(req,res) => {
     try{
         const newPost = await BlogPost.create({
