@@ -21,4 +21,29 @@ router.get('/', withAuth, async(req, res) => {
     }
 })
 
+//GET all user's blogs for their dashboard
+router.get('/blogposts', async (req, res) => {
+    try{
+        //Retrieve the current logged-in user's ID from the session
+        const userId = req.session.user_id;
+        console.log(userId)
+        //Find all blog posts associated with the user
+        const blogPosts = await BlogPost.findAll({
+            where: { user_id: userId }
+        });
+
+        //Serialize data so the template can read it
+        const serializedBlogPosts = blogPosts.map((post) => post.get({ plain: true}));
+
+        //pass data and session flag into a template
+        console.log(serializedBlogPosts)
+        res.render('blog', {
+            blogPosts: serializedBlogPosts,
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+    });
+
 module.exports = router;

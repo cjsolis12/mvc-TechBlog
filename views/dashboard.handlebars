@@ -43,11 +43,12 @@
     </div>
 
     {{#if blogPosts.length}}
-    {{#each blogPosts as |blogPost| }}
+    {{#each blogPosts}}
     
-      {{>blogposts}}
-      
+     {{> blogposts}}
     {{/each}}
+      {{else}}
+      <p>no blog posts found</p>
     {{/if}}
     
   </div>
