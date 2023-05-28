@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPost, User } = require('../models')
+const { BlogPost, User, Comment } = require('../models')
 const withAuth = require('../utils/auth')
 
 //GET all existing blogposts for homepage
@@ -10,16 +10,19 @@ const dbBlogPostData = await BlogPost.findAll({
         {
             model: User,
             attributes:['username'],
+        },
+        {
+            model: Comment,
         }
     ]
 
 });
- const blogPosts = dbBlogPostData.map((blogpost) => 
+ const blogs = dbBlogPostData.map((blogpost) => 
  blogpost.get({ plain: true })
  );
 
  res.render('homepage', {
-    blogPosts,
+    blogs,
     logged_in: req.session.logged_in
  });
 } catch(err){
