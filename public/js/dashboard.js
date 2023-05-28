@@ -4,8 +4,6 @@ const createNewBlog = async (event) => {
     const title = document.querySelector('#blogTitle').value.trim();
     const content = document.querySelector('#blogText').value.trim();
 
-    console.log(title, content)
-
     if(title && content){
         const response = await fetch (`api/blogs`, {
             method: 'POST',
