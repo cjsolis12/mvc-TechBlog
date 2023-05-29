@@ -23,7 +23,8 @@ const dbBlogPostData = await BlogPost.findAll({
  console.log(blogs)
  res.render('homepage', {
     blogs,
-    logged_in: req.session.logged_in
+    logged_in: req.session.logged_in,
+    commentModal: (id) => handlebars.compile(commentModalTemplate)({ id })
  });
 } catch(err){
     res.status(500).json(err)

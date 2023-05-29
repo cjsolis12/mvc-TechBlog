@@ -22,7 +22,11 @@ const createNewComment = async (event) => {
 
 document.querySelector('#newCommentBtn').addEventListener('click', createNewComment)
 
-document.querySelector('#commentBtn').addEventListener('click', function(){
-// Show the comment modal
-$('#commentModal').modal('show');
+
+// for all buttons to create a new blogpost
+document.querySelectorAll('.commentBtn').forEach((button) => {
+    button.addEventListener('click', function (){
+        const postId =this.dataset.postId
+        $('#commentModal' + postId).modal('show');
+    })
 })
