@@ -1,12 +1,12 @@
 const createNewComment = async (event) => {
     event.preventDefault();
 
-    const content = document.querySelector('#commentContent').value.trim();
+    const text = document.querySelector('#blogText').value.trim();
     
-    if(content){
+    if(text){
         const response = await fetch ('api/comments', {
             method: 'POST',
-            body: JSOn.stringify({content}),
+            body: JSON.stringify({text}),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -20,4 +20,9 @@ const createNewComment = async (event) => {
     }
 }
 
-document.querySelector('#newComment').addEventListener('click', createNewComment)
+document.querySelector('#newCommentBtn').addEventListener('click', createNewComment)
+
+document.querySelector('#commentBtn').addEventListener('click', function(){
+// Show the comment modal
+$('#commentModal').modal('show');
+})
