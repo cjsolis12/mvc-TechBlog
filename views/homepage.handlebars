@@ -10,22 +10,32 @@
   <div class="container">
     <div class="row">
       {{#each blogs}}
-      <div class="col-xl-3 col=sm-6 mb-5">
+      <div class=" my-3 py-3">
         <div class="bg-white rounded shadow-sm py-3 px-3">
           <div class="d-flex p-2 justify-content-between">
-            <a href="/api/blogs/{{id}}" id="blogTitle">
-              <h4 class="mb-0">{{title}}</h4>
-            </a>
+            <h4 class="mb-0" data-toggle="collapse" data-target="#blogCollapse{{id}}" aria-expanded="false"
+              aria-controls="blogCollapse{{id}}" style="color: #1abc9c;">{{title}}</h4>
             <p class="text-muted small mb-0">{{format_date createdAt}}</p>
           </div>
-          <div class="d-flex p-2">
-            <p class="text-muted small mb-0">
+          <div class="d-flex flex-column p-2">
+            <p class="text-muted small mb-0 mr-2">
               By: {{user.username}}
             </p>
+            <div>
+              <span class="text-muted small mb-0">Leave a comment</span>
+              <i class="fa-solid fa-comment ml-2"
+                style="color: #1abc9c;"></i>
+            </div>
+
           </div>
-          <p class="d-flex p-2" style="color: rgb(85, 84, 84);">
+          <p id="limited-text" class="d-flex p-2 limited-text" style="color: rgb(85, 84, 84);">
             {{content}}
           </p>
+          <div id="blogCollapse{{id}}" class="collapse">
+            <p id="limited-text" class="d-flex p-2 limited-text" style="color: rgb(85, 84, 84);">
+              {{content}}
+            </p>
+          </div>
         </div>
       </div>
       {{/each}}

@@ -43,7 +43,14 @@ body{
     color:rgb(221,222,222);
     
 }
-
+#limited-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
 /* New Blog post  */
 #newPost, #newPostBtn{
     background-color: #1abc9c;
