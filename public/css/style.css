@@ -33,12 +33,12 @@ body{
     color: #1abc9c  ;
 }
 #blog-card, #login-card, #register-card{
-    background-color: #eaeef2c4;
-    box-shadow: 0 3px 5px rgb(231, 226, 88);
+    background-color: #ffffffc4;
+    box-shadow: 0 3px 5px rgb(192, 192, 192);
 }
 
 #blog-title, #dashboardTitle{
-    color: #aed20f;
+    color: #1abc9c;
     
 }
 
