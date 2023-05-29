@@ -42,8 +42,8 @@
       </div>
     </div>
 
-    {{#if blogPosts.length}}
-    {{#each blogPosts}}
+    {{#if BlogPosts.length}}
+    {{#each blogPosts as |blogPost|}}
     <div class="d-flex flex-start align-items-center">
       <div>
         <a href="/api/blogs/{{id}}">
