@@ -22,10 +22,9 @@
               By: {{user.username}}
             </p>
             <div>
-              <a href="#" >
-              <span class="text-muted small mb-0">Leave a comment</span>
-              <i class="fa-solid fa-comment ml-2"
-                style="color: #1abc9c;"></i>
+              <a href="#">
+                <span class="text-muted small mb-0">Leave a comment</span>
+                <i class="fa-solid fa-comment ml-2"></i>
               </a>
             </div>
 
@@ -35,13 +34,19 @@
           </p>
           {{!-- Collapsed Comment section for each blog post --}}
           <div id="blogCollapse{{id}}" class="collapse">
-              {{#each Comments}}
-              <div class="comment">
-                <p>{{this.text}}</p>
-                <p>By: {{this.user.username}}</p>
-                <p>{{ format_date this.createdAt}}</p>
+            {{#each Comments}}
+            <div id="commentCard" class="my-2">
+              <div class="d-flex p-2 justify-content-between p-2" >
+                <div><i class="fa-solid fa-user"></i>{{this.user.username}}</div>
+                 <div class="commentUser"><i class="fa-sharp fa-regular fa-clock"></i> {{ format_date this.createdAt}}
+                </div>
               </div>
-              {{/each}}
+              <div class="d-flex p-2">{{this.text}}</div>
+              <div>
+               
+              </div>
+            </div>
+            {{/each}}
           </div>
         </div>
       </div>

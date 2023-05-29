@@ -2,6 +2,9 @@ a {
     text-decoration: none !important;
   }
 
+  i{
+    color: #1abc9c;
+  }
 body{
     background: #e8cbc0;
     background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
@@ -48,4 +51,11 @@ body{
 #newPost, #newPostBtn{
     background-color: #1abc9c;
     color:rgb(221,222,222) ;
+}
+
+/* Comment Card */
+#commentCard{
+    border:.5px solid #636fa4;
+    border-radius: 2px;
+    box-shadow:0 3px 5px #636fa4;
 }
