@@ -28,7 +28,6 @@ body{
 }
 
 /* Blog Post Styling */
-
 #blogTitle{
     color: #1abc9c  ;
 }
@@ -46,7 +45,6 @@ body{
 }
 
 /* New Blog post  */
-
 #newPost, #newPostBtn{
     background-color: #1abc9c;
     color:rgb(221,222,222) ;

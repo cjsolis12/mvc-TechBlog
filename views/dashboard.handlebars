@@ -54,14 +54,13 @@
                 <a href="/api/blogs/{{id}}" id="blogTitle">
                   <h4 class="mb-0">{{title}}</h4>
                 </a>
-                <i class="fa-solid fa-trash-can"></i>
+                <i id="trash" class="fa-solid fa-trash-can" style="color: rgb(126, 24, 55);"></i>
               </div>
               <p class="text-muted small mb-0">{{format_date createdAt}}</p>
               <div class="d-flex">
                 <p class="mt-3 mb-4 pb-2">
                   {{content}}
                 </p>
-
               </div>
 
               {{! Display comments }}
