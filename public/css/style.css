@@ -16,8 +16,6 @@ body{
     font-weight: 400;
 
 }
-
-
 .navbar  .nav-link {
     color: #dddede;
     padding: 20px;
@@ -30,6 +28,10 @@ body{
 }
 
 /* Blog Post Styling */
+
+#blogTitle{
+    color: #1abc9c  ;
+}
 #blog-card, #login-card, #register-card{
     background-color: #eaeef2c4;
     box-shadow: 0 3px 5px rgb(231, 226, 88);
