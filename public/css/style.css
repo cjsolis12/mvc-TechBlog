@@ -1,7 +1,11 @@
-
+a {
+    text-decoration: none !important;
+  }
 
 body{
-    background: radial-gradient(circle, rgb(75, 162, 139) -20%, rgba(12,12,48,1) 75%);
+    background: #e8cbc0;
+    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+    background: linear-gradient(to right, #e8cbc0, #636fa4);
     font-family: 'Raleway', sans-serif;
 }
 
@@ -13,6 +17,7 @@ body{
 
 }
 
+
 .navbar  .nav-link {
     color: #dddede;
     padding: 20px;
@@ -20,7 +25,7 @@ body{
     font-size: 20px;
     letter-spacing: 1px;
 }
-.navbar-nav  li a:hover {
+.navbar-nav  li a:hover  {
     color: #1abc9c !important;
 }
 
