@@ -54,7 +54,7 @@ body{
 }
 
 /* Comment Card */
-#commentBtn{
+.commentBtn{
     border-radius: 5px;
     background-color: #ffded2;
     border: none;
