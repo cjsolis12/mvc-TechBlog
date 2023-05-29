@@ -3,7 +3,7 @@
   <div class="row text-center text-white">
     <div class="col-lg-8 mx-auto">
       <h1 class="display-4">CodeFlix</h1>
-      <p class="lead mb-5">Posting about all things tech.</p>
+      <p class="lead mb-5">Post about all things tech.</p>
     </div>
   </div>
 
@@ -22,19 +22,26 @@
               By: {{user.username}}
             </p>
             <div>
+              <a href="#" >
               <span class="text-muted small mb-0">Leave a comment</span>
               <i class="fa-solid fa-comment ml-2"
                 style="color: #1abc9c;"></i>
+              </a>
             </div>
 
           </div>
           <p id="limited-text" class="d-flex p-2 limited-text" style="color: rgb(85, 84, 84);">
             {{content}}
           </p>
+          {{!-- Collapsed Comment section for each blog post --}}
           <div id="blogCollapse{{id}}" class="collapse">
-            <p id="limited-text" class="d-flex p-2 limited-text" style="color: rgb(85, 84, 84);">
-              {{content}}
-            </p>
+              {{#each Comments}}
+              <div class="comment">
+                <p>{{this.text}}</p>
+                <p>By: {{this.user.username}}</p>
+                <p>{{ format_date this.createdAt}}</p>
+              </div>
+              {{/each}}
           </div>
         </div>
       </div>
