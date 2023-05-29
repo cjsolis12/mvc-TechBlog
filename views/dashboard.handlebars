@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-auto">
+  <div id="dashboardTitle" class="col-auto">
     <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
@@ -44,13 +44,25 @@
 
     {{#if blogPosts.length}}
     {{#each blogPosts}}
-    
-     {{> blogposts}}
+    <div class="d-flex flex-start align-items-center">
+      <div>
+        <a href="/api/blogs/{{id}}">
+          <h3 class="fw-bold text-primary mb-1" id="blog=title">{{title}}</h3>
+        </a>
+        <p class="text-muted small mb-0">
+          {{format_date createdAt}}
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-3 mb-4 pb-2">
+      {{content}}
+    </p>
     {{/each}}
-      {{else}}
-      <p>no blog posts found</p>
+    {{else}}
+    <p>no blog posts found</p>
     {{/if}}
-    
+
   </div>
 
   <script src="./js/dashboard.js"></script>

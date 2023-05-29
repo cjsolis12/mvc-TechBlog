@@ -22,7 +22,7 @@ router.get('/', withAuth, async(req, res) => {
 })
 
 //GET all user's blogs for their dashboard
-router.get('/blogposts', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try{
         //Retrieve the current logged-in user's ID from the session
         const userId = req.session.user_id;
@@ -36,8 +36,7 @@ router.get('/blogposts', async (req, res) => {
         const serializedBlogPosts = blogPosts.map((post) => post.get({ plain: true}));
 
         //pass data and session flag into a template
-        console.log(serializedBlogPosts)
-        res.render('blog', {
+        res.render('dashboard', {
             blogPosts: serializedBlogPosts,
             logged_in: req.session.logged_in,
         });

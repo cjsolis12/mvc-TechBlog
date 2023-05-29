@@ -15,12 +15,11 @@ const dbBlogPostData = await BlogPost.findAll({
             model: Comment,
         }
     ]
-
 });
  const blogs = dbBlogPostData.map((blogpost) => 
  blogpost.get({ plain: true })
  );
-
+ console.log(blogs)
  res.render('homepage', {
     blogs,
     logged_in: req.session.logged_in

@@ -10,7 +10,7 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    content: {
+    text: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
@@ -42,7 +42,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Comments",
+    modelName: "Comment",
   }
 );
 

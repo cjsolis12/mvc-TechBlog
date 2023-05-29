@@ -12,7 +12,7 @@ const routes = require('./controllers')
 
 const hbs = exphbs.create({ helpers })
 const app = express();
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 
 //create for cookie
 app.use(session({
