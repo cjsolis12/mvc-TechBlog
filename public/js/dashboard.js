@@ -14,7 +14,7 @@ const createNewBlog = async (event) => {
         });
 
         if(response.ok){
-            document.location.replace('/dashboard');
+            document.location.replace('/');
         } else {
             alert( `Failed to create new post`)
         }
