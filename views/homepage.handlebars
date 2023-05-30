@@ -32,14 +32,14 @@
           </p>
           {{!-- Collapsed Comment section for each blog post --}}
           <div id="blogCollapse{{id}}" class="collapse">
-            {{#each Comments}}
+            {{#each Comments as |comment|}}
             <div id="commentCard" class="my-2">
               <div class="d-flex p-2 justify-content-between p-2" >
-                <div><i class="fa-solid fa-user"></i>{{this.username}}</div>
-                 <div class="commentUser"><i class="fa-sharp fa-regular fa-clock"></i> {{ format_date this.createdAt}}
+                <div><i class="fa-solid fa-user"></i>{{comment.username}}</div>
+                 <div class="commentUser"><i class="fa-sharp fa-regular fa-clock"></i> {{ format_date comment.createdAt}}
                 </div>
               </div>
-              <div class="d-flex p-2">{{text}}</div>
+              <div class="d-flex p-2">{{comment.text}}</div>
               <div>
                
               </div>
