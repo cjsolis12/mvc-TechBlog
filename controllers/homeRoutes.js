@@ -13,10 +13,11 @@ const dbBlogPostData = await BlogPost.findAll({
         },
         {
             model: Comment,
-            include: [User],
+
         }
     ]
 });
+
  const blogs = dbBlogPostData.map((blogpost) => 
  blogpost.get({ plain: true })
  );
@@ -24,7 +25,7 @@ const dbBlogPostData = await BlogPost.findAll({
  res.render('homepage', {
     blogs,
     logged_in: req.session.logged_in,
-    commentModal: (id) => handlebars.compile(commentModalTemplate)({ id })
+
  });
 } catch(err){
     res.status(500).json(err)

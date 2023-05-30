@@ -13,7 +13,7 @@
       <div class=" my-3 py-3">
         <div class="bg-white rounded shadow-sm py-3 px-3">
           <div class="d-flex p-2 justify-content-between">
-            <h4 class="mb-0" data-toggle="collapse" data-target="#blogCollapse{{id}}" aria-expanded="false"
+            <h4 class="mb-0" data-toggle="{{#if Comments}}collapse{{/if}}" data-target="{{#if Comments}}#blogCollapse{{id}}{{/if}}" aria-expanded="false"
               aria-controls="blogCollapse{{id}}" style="color: #1abc9c;">{{title}}</h4>
             <p class="text-muted small mb-0">{{format_date createdAt}}</p>
           </div>
@@ -22,10 +22,10 @@
               By: {{user.username}}
             </p>
             <div>
-                <button class="text-muted small mb-0 commentBtn" data-post-id="{{id}}" >Leave a comment
+                <button class="text-muted small mb-0 commentBtn">Leave a comment
                 <i class="fa-solid fa-comment ml-2"></i></button>
             </div>
-            {{> commentModal id=id}}
+            {{> commentModal id}}
           </div>
           <p id="limited-text" class="d-flex p-2 limited-text" style="color: rgb(85, 84, 84);">
             {{content}}
@@ -35,11 +35,11 @@
             {{#each Comments}}
             <div id="commentCard" class="my-2">
               <div class="d-flex p-2 justify-content-between p-2" >
-                <div><i class="fa-solid fa-user"></i>{{this.user.username}}</div>
+                <div><i class="fa-solid fa-user"></i>{{this.username}}</div>
                  <div class="commentUser"><i class="fa-sharp fa-regular fa-clock"></i> {{ format_date this.createdAt}}
                 </div>
               </div>
-              <div class="d-flex p-2">{{this.text}}</div>
+              <div class="d-flex p-2">{{text}}</div>
               <div>
                
               </div>
