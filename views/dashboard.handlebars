@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-
+{{!-- User's blogposts --}}
     {{#if BlogPosts.length}}
     {{#each blogPosts as |blogPost|}}
     <div class="container my-3 py-3">
@@ -54,7 +54,7 @@
                 <a href="/api/blogs/{{id}}" id="blogTitle">
                   <h4 class="mb-0">{{title}}</h4>
                 </a>
-                <i id="trash" class="fa-solid fa-trash-can" style="color: rgb(126, 24, 55);"></i>
+                <i id="trash" class="fa-solid fa-trash-can" style="color: rgb(126, 24, 55);" data-id="{{id}}"></i>
               </div>
               <p class="text-muted small mb-0">{{format_date createdAt}}</p>
               <div class="d-flex">
@@ -74,10 +74,7 @@
         </div>
       </div>
     </div>
-
     {{/each}}
-    {{else}}
-    <p>no blog posts found</p>
     {{/if}}
 
   </div>
