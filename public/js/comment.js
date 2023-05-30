@@ -27,6 +27,7 @@ document.querySelector('#newCommentBtn').addEventListener('click', createNewComm
 document.querySelectorAll('.commentBtn').forEach((button) => {
     button.addEventListener('click', function () {
         const postId = this.dataset.postId
+        console.log('Post ID:', postId);
         $('#commentModal' + postId).modal('show');
     })
 })

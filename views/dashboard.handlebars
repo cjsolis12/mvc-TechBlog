@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-{{!-- User's blogposts --}}
+    {{!-- User's blogposts --}}
     {{#if BlogPosts.length}}
     {{#each blogPosts as |blogPost|}}
     <div class="container my-3 py-3">
@@ -51,10 +51,13 @@
           <div class="card" id="blog-card">
             <div class="card-body">
               <div class="d-flex justify-content-between">
-                <a href="/api/blogs/{{id}}" id="blogTitle">
-                  <h4 class="mb-0">{{title}}</h4>
-                </a>
-                <i id="trash" class="fa-solid fa-trash-can" style="color: rgb(126, 24, 55);" data-id="{{id}}"></i>
+                <h4 class="mb-0">{{title}}</h4>
+                <div class= "d-flex">
+                  <a href="/dashboard/update/{{blogPost.id}}"class="p-3">
+                    <i class="fa-solid fa-pencil"></i>
+                  </a>
+                  <i id="trash" class="fa-solid fa-trash-can p-3" style="color: rgb(126, 24, 55);" data-id="{{id}}"></i>
+                </div>
               </div>
               <p class="text-muted small mb-0">{{format_date createdAt}}</p>
               <div class="d-flex">
@@ -64,7 +67,7 @@
               </div>
 
               {{! Display comments }}
-              {{#each comments}}
+              {{#each Comments as |comment|}}
               <p>{{this.text}}</p>
               <p>By: {{this.user.username}}</p>
               <!-- Display other comment details -->

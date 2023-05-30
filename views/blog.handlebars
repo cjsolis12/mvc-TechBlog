@@ -19,11 +19,15 @@
           </p>
 
           {{!-- Comment Form --}}
-          <form action="/api/comments" method="POST">
+          <form action="/dashboard/update/{{id}}" method="POST">
             <input type="hidden" name="blogPost_id" value="{{id}}">
-            <div class="mb-3">
-              <label for="commentContent" class="form-label">Leave a comment:</label>
-              <textarea class="form-control" name="content" id="commentContent" rows="3"></textarea>
+            <div>
+              <label for="title">Rename Title</label>
+              <input type="text" id="title" name="title" value="{{blogPost.title}}">
+            </div>
+            <div>
+              <label for="content">Content</label>
+              <textarea id="content" name="content">{{blogPost.content}}</textarea>
             </div>
             <button id="newComment" type="submit" class="btn btn-primary">Submit</button>
           </form>
