@@ -5,13 +5,16 @@ const withAuth = require('../../utils/auth');
 //Create a new comment
 router.post('/', withAuth, async(req, res) =>{
     try{
+        const { text, postId } = req.body; // Retrieve text and postId from the request body
         const newComment= await Comment.create({
-            ...req.body,
+            text,
             user_id: req.session.user_id,
-            blogPost_id: req.body.blogPost_id,
+            blogPost_id: postId
         });
 
-    //Redirect to the homepage after successfully creating a comment
+   
+    console.log(newComment)
+     //Redirect to the homepage after successfully creating a comment
     res.redirect('/'); 
     } catch (err){
         res.status(400).json(err)

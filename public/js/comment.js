@@ -1,33 +1,39 @@
-const createNewComment = async (event) => {
-    event.preventDefault();
-
-    const text = document.querySelector('#blogText').value.trim();
+const createNewComment = async (postId) => {
+    const text = document.querySelector('#commentText').value.trim();
 
     if (text) {
         const response = await fetch('api/comments', {
             method: 'POST',
-            body: JSON.stringify({ text }),
+            body: JSON.stringify({ text, postId }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
         console.log(response)
         if (response.ok) {
-            window.location.replace('/homepage');
+            window.location.replace('/');
         } else {
             alert('Sorry could not make a comment')
         }
     }
 }
 
-document.querySelector('#newCommentBtn').addEventListener('click', createNewComment)
-
-
-// for all buttons to create a new blogpost
+// Event listener for the commentSubmit button
 document.querySelectorAll('.commentBtn').forEach((button) => {
     button.addEventListener('click', function () {
-        const postId = this.dataset.id
-        console.log('Post ID:', postId);
-        $('#commentModal' + postId).modal('show');
-    })
-})
+      const postId = this.dataset.id;
+      console.log('Post ID:', postId);
+      $('#commentModal' + postId).modal('show');
+  
+      // Event listener for the commentSubmit button inside the modal
+      const commentSubmitBtn = document.querySelector(`#commentSubmit[data-id="${postId}"]`);
+      commentSubmitBtn.addEventListener('click', function () {
+        createNewComment(postId);
+      });
+    });
+  });
+
+
+
+
+
