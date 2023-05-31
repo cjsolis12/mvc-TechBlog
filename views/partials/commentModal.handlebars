@@ -1,4 +1,4 @@
-   <div class="modal fade" id="commentModal{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+   <div class="modal fade" id="commentModal{{postId}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -12,13 +12,13 @@
             <form>
               <div class="form-group">
                 <label for="content">Leave a comment</label>
-                <textarea class="form-control" id="commentText" rows="5"></textarea>
+                <textarea class="form-control" id="commentText{{postId}}" rows="5"></textarea>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button id="commentSubmit" type="button" class="btn btn-primary" data-id="{{id}}">Post</button>
+            <button type="button" class="btn btn-primary commentSubmit" id="commentSubmit{{postId}}" data-id="{{postId}}">Post</button>
           </div>
         </div>
       </div>

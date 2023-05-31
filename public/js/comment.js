@@ -26,8 +26,11 @@ document.querySelectorAll('.commentBtn').forEach((button) => {
       $('#commentModal' + postId).modal('show');
   
       // Event listener for the commentSubmit button inside the modal
-      const commentSubmitBtn = document.querySelector(`#commentSubmit[data-id="${postId}"]`);
+      const commentSubmitBtn = document.getElementById('commentSubmit' + postId);
+      commentSubmitBtn.dataset.id = postId; // Assign the postId to the submit button's dataset
+      
       commentSubmitBtn.addEventListener('click', function () {
+        const postId = this.dataset.id;
         createNewComment(postId);
       });
     });
