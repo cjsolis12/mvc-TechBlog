@@ -26,7 +26,7 @@ document.querySelector('#newCommentBtn').addEventListener('click', createNewComm
 // for all buttons to create a new blogpost
 document.querySelectorAll('.commentBtn').forEach((button) => {
     button.addEventListener('click', function () {
-        const postId = this.dataset.postId
+        const postId = this.dataset.id
         console.log('Post ID:', postId);
         $('#commentModal' + postId).modal('show');
     })
