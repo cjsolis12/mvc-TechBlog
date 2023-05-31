@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { BlogPost, User, Comment} = require("../../models");
+const { BlogPost, User, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //GET one blog
@@ -16,9 +16,9 @@ router.get("/:id", async (req, res) => {
           attributes: ["text", "user_id"],
           include: {
             model: User,
-            attributes: ["username"]
+            attributes: ["username"],
           },
-        }
+        },
       ],
     });
     const blogPosts = dbBlogPostData.get({ plain: true });
@@ -43,27 +43,25 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-//Delete a blogpost 
+//Delete a blogpost
 
-router.delete('/:id', withAuth, async (req,res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const blogPostData = await BlogPost.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id
-      }
+        user_id: req.session.user_id,
+      },
     });
-    if(!blogPostData){
-      res.status(404).json({ message: 'No blogpost with this id'})
+    if (!blogPostData) {
+      res.status(404).json({ message: "No blogpost with this id" });
       return;
     }
-    res.status(200).json(blogPostData)
+    res.status(200).json(blogPostData);
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
-})
-
-// Update a blogpost
+});
 
 // Update a blog post
 router.put("/update/:id", withAuth, async (req, res) => {
@@ -80,7 +78,8 @@ router.put("/update/:id", withAuth, async (req, res) => {
         },
       }
     );
-
+    const blogPost = dbBlogPostData.get({ plain: true });
+    res.render("dashboard", { blogPost, showModal: true });
     if (!updatedPost[0]) {
       res.status(404).json({ message: "No blog post found with this id" });
       return;
@@ -91,6 +90,5 @@ router.put("/update/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
