@@ -1,57 +1,56 @@
-const router = require('express').Router();
-const { BlogPost, User, Comment } = require('../models')
+const router = require("express").Router();
+const { BlogPost, User, Comment } = require("../models");
 // const withAuth = require('../utils/auth')
 
 //GET all existing blogposts for homepage
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const dbBlogPostData = await BlogPost.findAll({
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ["username"],
                 },
                 {
                     model: Comment,
-                    attributes: ['text', 'user_id', 'createdAt'],
+                    attributes: ["text", "user_id", "createdAt"],
                     include: {
                         model: User,
-                        attributes: ['username'],
+                        attributes: ["username"],
                     },
-                }
-            ]
+                },
+            ],
         });
 
-        const blogs = dbBlogPostData.map((blogpost) => 
+        const blogs = dbBlogPostData.map((blogpost) =>
             blogpost.get({ plain: true })
-        )
-        console.log(blogs)
-        res.render('homepage', {
+        );
+        console.log(blogs);
+        res.render("homepage", {
             blogs,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
 });
 
-
 //Login Route
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/');
+        res.redirect("/");
         return;
     }
-    res.render('login')
-})
+    res.render("login");
+});
 
 //New Account Route
-router.get('/register', (req, res) => {
-    // if(req.session.loggedIn){
-    //     res.redirect('/');
-    //     return;
-    // }
-    res.render('register')
-})
+router.get("/register", (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect("/");
+        return;
+    }
+    res.render("register");
+});
 
 module.exports = router;

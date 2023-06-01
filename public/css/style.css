@@ -1,67 +1,68 @@
 a {
-    text-decoration: none !important;
-  }
+  text-decoration: none !important;
+}
 
-  i{
-    color: #1abc9c;
-  }
-body{
-    background: #e8cbc0;
-    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
-    background: linear-gradient(to right, #e8cbc0, #636fa4);
-    font-family: 'Raleway', sans-serif;
+i {
+  color: #1abc9c;
+}
+body {
+  background: #e8cbc0;
+  background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+  background: linear-gradient(to right, #e8cbc0, #636fa4);
+  font-family: "Raleway", sans-serif;
 }
 
 /* Navbar styling */
 
-.navbar-brand{
-    font-size: 24px;
-    font-weight: 400;
-
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 400;
 }
-.navbar  .nav-link {
-    color: #dddede;
-    padding: 20px;
-    margin: 10px;
-    font-size: 20px;
-    letter-spacing: 1px;
+.navbar .nav-link {
+  color: #dddede;
+  padding: 20px;
+  margin: 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
-.navbar-nav  li a:hover  {
-    color: #1abc9c !important;
+.navbar-nav li a:hover {
+  color: #1abc9c !important;
 }
 
 /* Blog Post Styling */
-#blogTitle{
-    color: #1abc9c  ;
+#blogTitle {
+  color: #1abc9c;
 }
-#blog-card, #login-card, #register-card{
-    background-color: #ffffffc4;
-    box-shadow: 0 3px 5px rgb(192, 192, 192);
+#blog-card,
+#login-card,
+#register-card {
+  background-color: #ffffffc4;
+  box-shadow: 0 3px 5px rgb(192, 192, 192);
 }
 
-#blog-title{
-    color: #1abc9c;    
+#blog-title {
+  color: #1abc9c;
 }
-#dashboardTitle{
-    color:rgb(221,222,222);
-    
+#dashboardTitle {
+  color: rgb(221, 222, 222);
 }
-  
+
 /* New Blog post  */
-#newPost, #newPostBtn{
-    background-color: #1abc9c;
-    color:rgb(221,222,222) ;
+#newPost,
+#newPostBtn {
+  background-color: #1abc9c;
+  color: rgb(221, 222, 222);
 }
 
 /* Comment Card */
-.commentBtn{
-    border-radius: 5px;
-    background-color: #ffded2;
-    border: none;
-    color: #1abc9c;
+.commentBtn {
+  border-radius: 5px;
+  background-color: #ffded2;
+  border: none;
+  color: #1abc9c;
 }
-#commentCard{
-    border:.5px solid #636fa4;
-    border-radius: 2px;
-    box-shadow:0 3px 5px #636fa4;
+#commentCard {
+  border: 0.5px solid #636fa4;
+  border-radius: 2px;
+  box-shadow: 0 3px 5px #636fa4;
 }
