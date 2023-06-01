@@ -1,5 +1,5 @@
 const createNewComment = async (postId) => {
-    const text = document.querySelector('#commentText').value.trim();
+    const text = document.querySelector(`#commentText${postId}`).value.trim();
 
     if (text) {
         const response = await fetch('api/comments', {
@@ -30,7 +30,6 @@ document.querySelectorAll('.commentBtn').forEach((button) => {
       commentSubmitBtn.dataset.id = postId; // Assign the postId to the submit button's dataset
       
       commentSubmitBtn.addEventListener('click', function () {
-        const postId = this.dataset.id;
         createNewComment(postId);
       });
     });
