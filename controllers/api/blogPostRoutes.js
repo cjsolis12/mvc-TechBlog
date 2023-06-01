@@ -44,7 +44,6 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 //Delete a blogpost
-
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const blogPostData = await BlogPost.destroy({
@@ -64,7 +63,7 @@ router.delete("/:id", withAuth, async (req, res) => {
 });
 
 // Update a blog post
-router.put("/update/:id", withAuth, async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatedPost = await BlogPost.update(
       {
@@ -78,13 +77,11 @@ router.put("/update/:id", withAuth, async (req, res) => {
         },
       }
     );
-    const blogPost = dbBlogPostData.get({ plain: true });
-    res.render("dashboard", { blogPost, showModal: true });
+ 
     if (!updatedPost[0]) {
       res.status(404).json({ message: "No blog post found with this id" });
       return;
     }
-
     res.status(200).json({ message: "Blog post updated successfully" });
   } catch (err) {
     res.status(500).json(err);
