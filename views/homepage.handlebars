@@ -22,11 +22,13 @@
             <p class="text-muted small mb-0 mr-2">
               By: {{user.username}}
             </p>
+           
+            {{#if ../logged_in}}
             <div>
               <button class="text-muted small mb-0 commentBtn" data-id="{{id}}">Leave a comment
                 <i class="fa-solid fa-comment ml-2"></i></button>
             </div>
-
+            {{/if}}
             {{> commentModal postId=id }}
           </div>
 
