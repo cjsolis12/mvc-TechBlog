@@ -10,6 +10,7 @@ const sequelize = process.env.JAWSDB_URL
         {
             host: 'localhost',
             dialect: 'mysql',
+            dialectModule: require('mariadb'),
             dialectOptions: {
                 decimalNumbers: true,
             },
