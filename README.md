@@ -28,7 +28,7 @@
   The user will need to create an account to create, update, and delete blog posts. Additionally they need an account to add comments to other user blog posts. To create an account, click on "login" and a sign up link will be available for new users. Once a new account is created, the user is directed to their own dashboard where any previous blog posts will be presented or a button to create a new blog post. Previous blog posts have icons to update or delete icons. On the homepage, users can click on the blog post title to see comments and have the option to leave a comment.
 
   Repo: https://github.com/cjsolis12/mvc-TechBlog.git 
-  Deployed app: https://salty-reaches-15784.herokuapp.com/
+  Deployed app: https://techflix-ca927f30e910.herokuapp.com/
 
 
   ## Credits
